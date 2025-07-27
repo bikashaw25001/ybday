@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,10 +28,14 @@
       justify-content: center;
       z-index: 10;
       color: white;
-      font-size: 6vw;
+      font-size: 4vw;
       cursor: pointer;
       text-align: center;
       padding: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
     }
     #conversationStartButton {
       position: fixed;
@@ -67,93 +72,67 @@
       transform: translate(-50%, -50%);
       font-size: 9vw;
       width: 95vw;
-      color: #ff69b4;
+      color: whitesmoke;
       font-weight: bold;
       text-align: center;
-      text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
+      text-shadow: 0 0 15px skyblue, 0 0 30px lightskyblue;
       animation: glowPulse 8s ease-in-out forwards, glowSparkle 1.5s infinite alternate;
       z-index: 9;
       display: none;
       line-height: 1.8em;
-    }@keyframes glowPulse {
-  0% { opacity: 0; text-shadow: 0 0 10px #ff69b4; }
-  20% { opacity: 1; text-shadow: 0 0 20px #ff69b4, 0 0 40px #ff69b4; }
-  70% { opacity: 1; text-shadow: 0 0 25px #ff69b4, 0 0 50px #ff69b4; }
-  100% { opacity: 0; text-shadow: 0 0 5px #ff69b4; }
-}
+    }
+    @keyframes glowPulse {
+      0% { opacity: 0; text-shadow: 0 0 10px deepskyblue; }
+      20% { opacity: 1; text-shadow: 0 0 20px skyblue, 0 0 40px skyblue; }
+      70% { opacity: 1; text-shadow: 0 0 25px lightskyblue, 0 0 50px lightskyblue; }
+      100% { opacity: 0; text-shadow: 0 0 5 lightskyblue; }
+    }
+    @keyframes glowSparkle {
+      0% { text-shadow: 0 0 5px skyblue, 0 0 10px skyblue; }
+      25% { text-shadow: 0 0 15px deepskyblue, 0 0 25px lightskyblue; }
+      50% { text-shadow: 0 0 30px lightskyblue, 0 0 40px lightskyblue; }
+      75% { text-shadow: 0 0 20px deepskyblue, 0 0 30px deepskyblue; }
+      100% { text-shadow: 0 0 10px deepskyblue, 0 0 20px deepskyblue; }
+    }
+    .chatBox {
+      margin-top: 12vh;
+      margin-bottom: 80px;
+      padding: 0 5vw;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .chatMessage {
+      background: #222;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 20px;
+      max-width: 80%;
+      font-size: 4vw;
+      opacity: 0;
+    }
+    .zeony { align-self: flex-start; background-color: #333366; }
+    .me { align-self: flex-end; background-color: #663366; }
 
-@keyframes glowSparkle {
-  0% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4; }
-  25% { text-shadow: 0 0 15px #ff8ad6, 0 0 25px #ff69b4; }
-  50% { text-shadow: 0 0 30px #ffb6e6, 0 0 40px #ff69b4; }
-  75% { text-shadow: 0 0 20px #ff8ad6, 0 0 30px #ff69b4; }
-  100% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
-}
-
-.chatBox {
-  margin-top: 12vh;
-  margin-bottom: 80px;
-  padding: 0 5vw;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.chatMessage {
-  background: #222;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 20px;
-  max-width: 80%;
-  font-size: 4vw;
-  opacity: 0;
-}
-
-.zeony { align-self: flex-start; background-color: #333366; }
-.me { align-self: flex-end; background-color: #663366; }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-#cakeContainer {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  flex-direction: column;
-}
-
-#cakeContainer img {
-  max-width: 90vw;
-  width: 300px;
-  animation: floatCake 2s ease-in-out infinite alternate;
-}
-
-@keyframes floatCake {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
-}
-
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <div id="startOverlay">Tap to turn on the lights 🎂</div>
+  <div id="startOverlay">Switch to Desktop Site & Tap to start</div>
   <button id="conversationStartButton">Continue</button>
   <div id="midText">
-    Happy<br>
-    Birthday<br>
-    My<br>
-    Dear<br>
-    Wife<br>
-    Yojna❤️
+   Happy Birthday<br>
+    My Dear🦄<br>
+   Wife 💍<br>
+   🦋 Yojna 🦋
   </div>
   <div class="chatBox" id="chatBox">
     <div class="chatMessage zeony">Zeony: Hey, don't forget... today is someone really special's birthday! 🎉</div>
@@ -167,10 +146,10 @@
     <div class="chatMessage zeony">Zeony: And tonight, she'll know just how deeply she's loved. ❤️</div>
     <div class="chatMessage me">Me: Happy Birthday Yojna, you are not just my wife... you're my world. 🌍</div>
     <div class="chatMessage zeony">Zeony: Go give her the biggest smile — and maybe a warm hug too! 🫂</div>
-    <button id="afterChatContinue">Continue</button>
-  </div>  <div id="cakeContainer">
-    <img src="https://i.imgur.com/I3gH8rC.gif" alt="Birthday Cake with Candles" />
-  </div>  <script>
+    <button id="afterChatContinue"><a href="BDAY/index.html">Continue</a></button>
+  </div>
+
+  <script>
     document.getElementById('startOverlay').addEventListener('click', () => {
       document.getElementById('startOverlay').style.display = 'none';
       const midText = document.getElementById('midText');
@@ -207,7 +186,8 @@
     document.getElementById('afterChatContinue').addEventListener('click', () => {
       document.body.style.background = '#ffe4ec';
       document.getElementById('chatBox').style.display = 'none';
-      document.getElementById('cakeContainer').style.display = 'flex';
+      // Removed cakeContainer
     });
-  </script></body>
+  </script>
+</body>
 </html>
