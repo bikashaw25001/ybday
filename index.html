@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise for Yojna</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      width: 100%;
+      background: #000;
+      font-family: 'Arial', sans-serif;
+      transition: background 2s ease-in-out;
+      overflow-x: hidden;
+    }
+    body {
+      overflow-y: auto;
+    }
+    #startOverlay {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      color: white;
+      font-size: 4vw;
+      cursor: pointer;
+      text-align: center;
+      padding: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    #conversationStartButton {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 6vw;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
+      z-index: 25;
+      display: none;
+      top: 50%;
+    }
+    #afterChatContinue {
+      margin: 30px auto;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 6vw;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
+      display: none;
+    }
+    #midText {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9vw;
+      width: 95vw;
+      color: whitesmoke;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 15px skyblue, 0 0 30px lightskyblue;
+      animation: glowPulse 8s ease-in-out forwards, glowSparkle 1.5s infinite alternate;
+      z-index: 9;
+      display: none;
+      line-height: 1.8em;
+    }
+    @keyframes glowPulse {
+      0% { opacity: 0; text-shadow: 0 0 10px deepskyblue; }
+      20% { opacity: 1; text-shadow: 0 0 20px skyblue, 0 0 40px skyblue; }
+      70% { opacity: 1; text-shadow: 0 0 25px lightskyblue, 0 0 50px lightskyblue; }
+      100% { opacity: 0; text-shadow: 0 0 5 lightskyblue; }
+    }
+    @keyframes glowSparkle {
+      0% { text-shadow: 0 0 5px skyblue, 0 0 10px skyblue; }
+      25% { text-shadow: 0 0 15px deepskyblue, 0 0 25px lightskyblue; }
+      50% { text-shadow: 0 0 30px lightskyblue, 0 0 40px lightskyblue; }
+      75% { text-shadow: 0 0 20px deepskyblue, 0 0 30px deepskyblue; }
+      100% { text-shadow: 0 0 10px deepskyblue, 0 0 20px deepskyblue; }
+    }
+    .chatBox {
+      margin-top: 12vh;
+      margin-bottom: 80px;
+      padding: 0 5vw;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .chatMessage {
+      background: #222;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 20px;
+      max-width: 80%;
+      font-size: 4vw;
+      opacity: 0;
+    }
+    .zeony { align-self: flex-start; background-color: #333366; }
+    .me { align-self: flex-end; background-color: #663366; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="startOverlay">Switch to Desktop Site & Tap to start</div>
+  <button id="conversationStartButton">Continue</button>
+  <div id="midText">
+   Happy Birthday<br>
+    My Dear🦄<br>
+   Wife 💍<br>
+   🦋 Yojna 🦋
+  </div>
+  <div class="chatBox" id="chatBox">
+    <div class="chatMessage zeony">Zeony: Hey, don't forget... today is someone really special's birthday! 🎉</div>
+    <div class="chatMessage me">Me: Oh my god, you're right! It's Yojna’s birthday today! 😍</div>
+    <div class="chatMessage zeony">Zeony: Time to make her feel like a queen. Ready for the surprise?</div>
+    <div class="chatMessage me">Me: Absolutely. Let’s light it up 💖</div>
+    <div class="chatMessage zeony">Zeony: Remember her smile? That's what we live for. Let's make it unforgettable tonight.</div>
+    <div class="chatMessage me">Me: I'm already emotional... she deserves the entire universe 🌌</div>
+    <div class="chatMessage zeony">Zeony: Then start with a little magic. This is your moment for her 💫</div>
+    <div class="chatMessage me">Me: She has always stood beside me, through every high and low.</div>
+    <div class="chatMessage zeony">Zeony: And tonight, she'll know just how deeply she's loved. ❤️</div>
+    <div class="chatMessage me">Me: Happy Birthday Yojna, you are not just my wife... you're my world. 🌍</div>
+    <div class="chatMessage zeony">Zeony: Go give her the biggest smile — and maybe a warm hug too! 🫂</div>
+    <button id="afterChatContinue"><a href="BDAY/index.html">Continue</a></button>
+  </div>
+
+  <script>
+    document.getElementById('startOverlay').addEventListener('click', () => {
+      document.getElementById('startOverlay').style.display = 'none';
+      const midText = document.getElementById('midText');
+      midText.style.display = 'block';
+
+      setTimeout(() => {
+        document.body.style.background = '#ffffff';
+        midText.style.display = 'none';
+        document.getElementById('conversationStartButton').style.display = 'block';
+      }, 8000);
+    });
+
+    document.getElementById('conversationStartButton').addEventListener('click', () => {
+      document.getElementById('conversationStartButton').style.display = 'none';
+      const messages = document.querySelectorAll(".chatMessage");
+
+      let delay = 0;
+      messages.forEach((msg, i) => {
+        setTimeout(() => {
+          msg.style.animation = 'slideIn 0.6s forwards';
+          msg.style.opacity = 1;
+
+          if (i === messages.length - 1) {
+            setTimeout(() => {
+              const continueBtn = document.getElementById('afterChatContinue');
+              continueBtn.style.display = 'block';
+            }, 1000);
+          }
+        }, delay);
+        delay += 2000;
+      });
+    });
+
+    document.getElementById('afterChatContinue').addEventListener('click', () => {
+      document.body.style.background = '#ffe4ec';
+      document.getElementById('chatBox').style.display = 'none';
+      // Removed cakeContainer
+    });
+  </script>
+</body>
+</html>
